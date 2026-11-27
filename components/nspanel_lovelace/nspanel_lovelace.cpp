@@ -52,7 +52,9 @@ bool NSPanelLovelace::restore_state_() {
   NSPanelRestoreState recovered{};
   this->pref_ = global_preferences->make_preference<NSPanelRestoreState>(/*this->get_object_id_hash() ^ */RESTORE_STATE_VERSION);
   bool restored = this->pref_.load(&recovered);
-  if (restored) {
+  // When a display schedule is configured, YAML/schedule is authoritative.
+  // Skip restoring stale persisted dim values so schedule applies on boot.
+  if (restored && !this->display_defaults_configured_) {
     this->display_active_dim_ = recovered.display_active_dim_;
     this->display_inactive_dim_ = recovered.display_inactive_dim_;
   }
