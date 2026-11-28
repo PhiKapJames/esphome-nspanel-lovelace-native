@@ -21,6 +21,6 @@ An interrupted upload can leave the display blank until it is flashed again. Tog
 
 ## Build variants
 
-The component can be compiled without upload support (`USE_NSPANEL_TFT_UPLOAD` disabled). CI covers that path; see [Development and CI](development.md).
+The component can be compiled without upload support (`USE_NSPANEL_TFT_UPLOAD` disabled). CI covers that path; see [Development and CI](development.md). For the exact recipe, including the API actions that must be removed, see [Reducing firmware size](low-memory.md).
 
 [← Back to README](../README.md#install)

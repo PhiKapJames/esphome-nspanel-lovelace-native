@@ -42,7 +42,7 @@ esphome run --device COM6 examples/basic-example.yaml
 
 OTA updates work with the ESPHome CLI after the initial upload.
 
-If the panel does not already report HMI firmware `52` or `53`, upload the matching `nspanel*.tft` file from v4.3.3 of the HMI project using Home Assistant's `upload_tft` service. The upload needs a HTTP Range-capable server, takes a few minutes, and can leave the screen blank if interrupted — [TFT firmware and upload](docs/tft-upload.md) has the timing, retry, and recovery details.
+If the panel does not already report HMI firmware `52` or `53`, upload the matching `nspanel*.tft` file from v4.3.3 of the HMI project using Home Assistant's `upload_tft` service. The upload needs a HTTP Range-capable server, takes a few minutes, and can leave the screen blank if interrupted — [TFT firmware and upload](docs/tft-upload.md) has the timing, retry, and recovery details. On panels that already have compatible firmware, [Reducing firmware size](docs/low-memory.md) shows how to build without the uploader.
 
 ## Configure
 
